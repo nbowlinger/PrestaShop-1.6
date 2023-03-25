@@ -50,7 +50,9 @@ class AdminProductsController extends AdminProductsControllerCore
             unset($product->id);
             unset($product->id_product);
             // Nicolas MAURENT - 15.11.2019 - Clear reference and ean13 bar code when duplicating product
-            unset($product->reference);
+            // Nicolas MAURENT - 25.03.2023 - Keep reference of duplicated product since reference is a required property
+			//unset($product->reference);
+			// Nicolas MAURENT - 25.03.2023 - End
             unset($product->ean13);
             // Nicolas MAURENT - 15.11.2019 - End
             $product->indexed = 0;
